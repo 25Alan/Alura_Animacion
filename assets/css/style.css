@@ -1,0 +1,61 @@
+.app {
+  background: hsl(0, 0%, 2%);
+  display: grid;
+  font-family: Arial, Helvetica, sans-serif;
+  grid-template-areas:
+    "header"
+    "contenido"
+    "footer";
+  grid-template-columns: auto;
+  grid-template-rows: 50px auto auto;
+}
+
+.encabezado {
+  align-items: center;
+  display: flex;
+  grid-area: header;
+  padding: 0 2rem;
+  background: #f1f1f1;
+  z-index: 200;
+}
+.contenido {
+  background: transparent;
+  grid-area: contenido;
+  padding: 0 2rem;
+  z-index: 150;
+}
+
+.rodapie {
+  background: #fdfdfd;
+  color: #333333;
+  grid-area: footer;
+  padding: 1rem;
+  text-align: center;
+}
+
+
+
+span{
+  position: absolute;
+  pointer-events: none;
+  background: hsl(0, 0%, 100%);
+  animation: animate 5s linear infinite;
+  z-index: 100;
+}
+
+@keyframes animate{
+  0%{
+      transform: scale(0) translateY(0) rotate(0deg);
+      opacity: 0;
+  }
+  10%{
+      opacity: 1;
+  }
+  90%{
+      opacity: 1;
+  }
+  100%{
+      transform: scale(1) translateY(-500%) rotate(360deg);
+      opacity: 0;
+  }
+}
